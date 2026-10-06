@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mio Gold — اکشن پلن جذب کاربر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf5ea; --white:#fffdf8; --charcoal:#201a10; --charcoal-soft:#463a28;
+    --gold:#b8925a; --gold-deep:#7a5a2e; --gold-pale:#e8d3a8;
+    --coral:#b6502f; --coral-soft:#f0d4c4;
+    --emerald:#255a49; --emerald-soft:#d7e8de;
+    --line:#e6d7b8; --radius:14px;
+    --serif:'Noto Naskh Arabic', serif; --sans:'Vazirmatn', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--charcoal);font-family:var(--sans);line-height:1.85;font-size:16px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;color:var(--charcoal);margin:0;}
+  p{margin:0;}
+  header{background:linear-gradient(135deg,#201a10,#463a28);color:var(--white);padding:60px 0 50px;}
+  header .eyebrow{color:var(--gold-pale);font-size:13px;font-weight:700;margin-bottom:12px;display:block;}
+  header h1{font-size:34px;max-width:700px;line-height:1.4;color:var(--white);}
+  header p{margin-top:14px;color:#f0e2c4;max-width:620px;}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
+  .hero-stat{background:rgba(255,255,255,.1);border-radius:var(--radius);padding:20px;text-align:center;}
+  .hero-stat .num{font-family:var(--serif);font-size:22px;color:#fff;}
+  .hero-stat .lbl{font-size:12.5px;color:#f0e2c4;margin-top:6px;}
+
+  section{padding:56px 0;border-top:1px solid var(--line);}
+  .section-title{font-size:24px;margin-bottom:8px;}
+  .section-sub{font-size:14px;color:var(--charcoal-soft);margin-bottom:32px;}
+
+  .split-bar{display:flex;height:46px;border-radius:12px;overflow:hidden;margin-bottom:14px;}
+  .split-bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12.5px;font-weight:700;}
+  .sb1{background:var(--gold-deep);width:45%;} .sb2{background:var(--coral);width:23%;}
+  .sb3{background:var(--emerald);width:23%;} .sb4{background:var(--charcoal);width:9%;}
+  .budget-summary{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+  .chip{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:13px;display:flex;align-items:center;gap:8px;color:var(--charcoal);}
+  .chip .dot{width:10px;height:10px;border-radius:50%;}
+
+  .media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .media-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;border-top:5px solid var(--gold-deep);}
+  .media-card.c2{border-top-color:var(--coral);}
+  .media-card.c3{border-top-color:var(--emerald);}
+  .media-card.c4{border-top-color:var(--charcoal);}
+  .media-card .icon{width:44px;height:44px;margin-bottom:14px;}
+  .media-card h3{font-size:19px;}
+  .media-budget{display:flex;justify-content:space-between;align-items:baseline;margin:12px 0 18px;padding-bottom:14px;border-bottom:1px dashed var(--line);}
+  .media-budget .amount{font-family:var(--serif);font-size:20px;color:var(--gold-deep);font-weight:700;}
+  .media-budget .share{font-size:12.5px;background:var(--gold-pale);padding:3px 10px;border-radius:20px;color:var(--charcoal);font-weight:600;}
+  .media-block{margin-bottom:14px;}
+  .media-block .lbl{font-size:12px;font-weight:700;color:var(--coral);margin-bottom:4px;display:block;}
+  .media-block p{font-size:13.5px;color:var(--charcoal-soft);}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .tag{font-size:11.5px;background:var(--emerald);color:#fff;padding:3px 10px;border-radius:20px;font-weight:600;}
+  .platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;}
+  .platform{background:var(--coral-soft);border-radius:10px;padding:10px 6px;text-align:center;font-size:13.5px;font-weight:700;color:var(--charcoal);}
+
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .week{border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;background:var(--white);border-top:4px solid var(--coral);}
+  .week .wk{font-family:var(--serif);color:var(--coral);font-size:13.5px;font-weight:700;}
+  .week h4{margin-top:6px;font-size:17px;}
+  .week p{font-size:13px;color:var(--charcoal-soft);margin-top:10px;}
+  .note{margin-top:20px;background:var(--gold-pale);border-radius:var(--radius);padding:16px 20px;font-size:13.5px;color:var(--charcoal);}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  thead th{text-align:right;font-weight:700;font-size:12.5px;color:#fff;background:var(--charcoal);padding:10px 12px;}
+  tbody td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--charcoal);}
+  tbody tr:nth-child(even){background:rgba(184,146,90,.08);}
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);}
+  footer{padding:40px 0 60px;text-align:center;color:var(--charcoal-soft);font-size:12.5px;}
+
+  @media (max-width:800px){
+    .media-grid,.timeline,.hero-stats{grid-template-columns:1fr;}
+    header h1{font-size:26px;}
+    .wrap{padding:0 18px;}
+    .split-bar div{font-size:10.5px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Mio Gold — کمپین جذب کاربر از طریق وب</span>
+    <h1>کمپین ۱۸ روزه برای آوردن کاربر به سایت</h1>
+    <p>چهار رسانه، هرکدوم با یه دلیل مشخص برای انتخاب و یه گروه مشخص از کاربرا که هدف قرار می‌دیم. تبلیغات درون‌اپ در دو مدل اختصاصی و هدفمند اجرا می‌شه.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">۱۱۰,۰۰۰,۰۰۰ تومان</div><div class="lbl">بودجه‌ی کل (قابل تنظیم بین ۱۰۰ تا ۱۲۰ میلیون)</div></div>
+      <div class="hero-stat"><div class="num">۱۸ روز</div><div class="lbl">مدت کمپین (قابل تنظیم بین ۱۵ تا ۲۰ روز)</div></div>
+      <div class="hero-stat"><div class="num">۴ رسانه</div><div class="lbl">پویا، درون‌اپ اختصاصی، درون‌اپ هدفمند، ریتارگت</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <h2 class="section-title">بودجه چطور تقسیم می‌شه؟</h2>
+  <p class="section-sub">بودجه‌ی تبلیغات درون‌اپ بین دو مدل اختصاصی و هدفمند نصف شده.</p>
+  <div class="split-bar">
+    <div class="sb1">پویا ۵۰M</div><div class="sb2">اختصاصی ۲۵M</div><div class="sb3">هدفمند ۲۵M</div><div class="sb4">۱۰M</div>
+  </div>
+  <div class="budget-summary">
+    <div class="chip"><span class="dot" style="background:var(--gold-deep);"></span>تبلیغات پویا — ۵۰,۰۰۰,۰۰۰</div>
+    <div class="chip"><span class="dot" style="background:var(--coral);"></span>درون‌اپ اختصاصی — ۲۵,۰۰۰,۰۰۰</div>
+    <div class="chip"><span class="dot" style="background:var(--emerald);"></span>درون‌اپ هدفمند — ۲۵,۰۰۰,۰۰۰</div>
+    <div class="chip"><span class="dot" style="background:var(--charcoal);"></span>ریتارگتینگ — ۱۰,۰۰۰,۰۰۰</div>
+  </div>
+
+  <h2 class="section-title">رسانه‌ها و دلیل انتخابشون</h2>
+  <p class="section-sub">هر کارت یعنی: چقدر بودجه، چرا این رسانه، و دقیقاً کدوم کاربرا رو هدف می‌گیریم.</p>
+  <div class="media-grid">
+
+    <div class="media-card">
+      <svg class="icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#7a5a2e" stroke-width="2"/><path d="M16 28 L24 16 L32 28" stroke="#7a5a2e" stroke-width="2" fill="none"/></svg>
+      <h3>تبلیغات پویا (همسان + بنری)</h3>
+      <div class="media-budget"><span class="amount">۵۰,۰۰۰,۰۰۰ تومان</span><span class="share">۴۵٪ از بودجه</span></div>
+      <div class="media-block"><span class="lbl">چرا این رسانه؟</span><p>همسان و بنری با هم ادغام شدن و روی یه پلتفرم هدفمند اجرا می‌شه. هم شبیه محتوای طبیعی دیده می‌شه، هم می‌تونیم دقیق انتخاب کنیم چه کسی ببینتش.</p></div>
+      <div class="media-block"><span class="lbl">چه کاربرایی رو هدف بگیریم؟</span><p>کسایی که اخیراً دنبال کلمه‌هایی مثل «خرید طلا» یا «هدیه» بودن، بازدیدکننده‌های سایت‌های مد و زیبایی، و کسایی که رفتار خریدآنلاین دارن.</p>
+        <div class="tags"><span class="tag">کلیدواژه</span><span class="tag">موضوعی</span><span class="tag">رفتارمحور</span></div>
+      </div>
+    </div>
+
+    <div class="media-card c2">
+      <svg class="icon" viewBox="0 0 48 48" fill="none"><rect x="14" y="8" width="20" height="32" rx="3" stroke="#b6502f" stroke-width="2"/><circle cx="24" cy="34" r="1.6" fill="#b6502f"/></svg>
+      <h3>درون‌اپ — نمایش‌دهنده‌های اختصاصی</h3>
+      <div class="media-budget"><span class="amount">۲۵,۰۰۰,۰۰۰ تومان</span><span class="share">۲۳٪ از بودجه</span></div>
+      <div class="media-block"><span class="lbl">چرا این رسانه؟</span><p>تبلیغ مستقیم داخل اپ‌هایی که خودِ مشتری انتخاب کرده. کاربرای این اپ‌ها زیاد و فعالن، و برند جلوی مخاطب آشنا با اون اپ دیده می‌شه.</p></div>
+      <div class="media-block"><span class="lbl">کدوم اپ‌ها؟ (انتخاب مشتری)</span>
+        <div class="platforms">
+          <div class="platform">سروش</div>
+          <div class="platform">وینزی</div>
+          <div class="platform">بادصبا</div>
+        </div>
+      </div>
+      <div class="media-block"><span class="lbl">چه کاربرایی؟</span><p>هر کسی که توی این اپ‌ها فعاله؛ هدف‌گیری مشخصی نداریم و تمرکز روی دیده‌شدن زیاد توی اپ‌های پرمخاطبه.</p></div>
+    </div>
+
+    <div class="media-card c3">
+      <svg class="icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="6" stroke="#255a49" stroke-width="2"/><circle cx="24" cy="24" r="14" stroke="#255a49" stroke-width="1.6"/><path d="M24 6 V12 M24 36 V42 M6 24 H12 M36 24 H42" stroke="#255a49" stroke-width="2"/></svg>
+      <h3>درون‌اپ — هدفمند</h3>
+      <div class="media-budget"><span class="amount">۲۵,۰۰۰,۰۰۰ تومان</span><span class="share">۲۳٪ از بودجه</span></div>
+      <div class="media-block"><span class="lbl">چرا این رسانه؟</span><p>اینجا خودمون مشخص می‌کنیم چه کسی تبلیغ رو ببینه، پس بودجه روی مخاطب واقعی خرج می‌شه، نه روی همه.</p></div>
+      <div class="media-block"><span class="lbl">چه کاربرایی رو هدف بگیریم؟</span><p>خانم‌ها، حدود ۲۰ تا ۴۵ سال، توی شهرهای بزرگ، علاقه‌مند به مد، جواهر، عروسی و خرید آنلاین.</p>
+        <div class="tags"><span class="tag">جنسیت</span><span class="tag">سن</span><span class="tag">شهر</span><span class="tag">علاقه‌مندی</span></div>
+      </div>
+    </div>
+
+    <div class="media-card c4">
+      <svg class="icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="6" stroke="#201a10" stroke-width="2"/><circle cx="24" cy="24" r="13" stroke="#201a10" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="24" cy="24" r="19" stroke="#201a10" stroke-width="1.2" stroke-dasharray="2 4"/></svg>
+      <h3>ریتارگتینگ</h3>
+      <div class="media-budget"><span class="amount">۱۰,۰۰۰,۰۰۰ تومان</span><span class="share">۹٪ از بودجه</span></div>
+      <div class="media-block"><span class="lbl">چرا این رسانه؟</span><p>فقط روی کسی وقت می‌ذاریم که واقعاً علاقه نشون داده، پس نرخ تبدیلش بالاتره. گرون‌ترین بخش به ازای هر نفره ولی مؤثرترینه.</p></div>
+      <div class="media-block"><span class="lbl">چه کاربرایی رو هدف بگیریم؟</span><p>کسی که وارد سایت شده و محصول دیده ولی نخریده، و کسی که محصول رو به سبد خرید اضافه کرده ولی تکمیل نکرده.</p>
+        <div class="tags"><span class="tag">دیده ولی نخریده</span><span class="tag">سبد رهاشده</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">تقویم اجرا — ۱۸ روز</h2>
+  <p class="section-sub">چون کمپین کوتاهه، تست سریع انجام می‌شه و بودجه خیلی زود روی برنده‌ها متمرکز می‌شه.</p>
+  <div class="timeline">
+    <div class="week"><div class="wk">روز ۱ تا ۴ · تست</div><h4>راه‌اندازی</h4><p>هر ۴ رسانه با بودجه‌ی کم فعال می‌شن. سه اپ اختصاصی با سهم مساوی شروع می‌کنن و چند نوع هدف‌گیری توی پویا و هدفمند تست می‌شه.</p></div>
+    <div class="week"><div class="wk">روز ۵ تا ۹ · پالایش</div><h4>حذف ضعیف‌ها</h4><p>اپ، هدف‌گیری و کریتیوی که ضعیف بوده کنار می‌ره و ریتارگتینگ روی بازدیدکننده‌های سایت فعال‌تر می‌شه.</p></div>
+    <div class="week"><div class="wk">روز ۱۰ تا ۱۴ · رشد</div><h4>افزایش بودجه‌ی برنده</h4><p>بودجه‌ی اپ و هدف‌گیری برنده بیشتر می‌شه و ریتارگتینگ روی بازدیدکننده‌های تازه شدیدتر می‌شه.</p></div>
+    <div class="week"><div class="wk">روز ۱۵ تا ۱۸ · نتیجه</div><h4>جمع‌بندی</h4><p>تحلیل نهایی هر رسانه و هر هدف‌گیری؛ تصمیم برای کمپین بعدی.</p></div>
+  </div>
+  <div class="note"><b>اگه مدت کمپین عوض شد:</b> برای ۱۵ روز، هر فاز یکی دو روز کوتاه‌تر می‌شه. برای ۲۰ روز، فاز رشد طولانی‌تر می‌شه. پیکسل ریتارگتینگ هم باید قبل از روز اول روی سایت نصب باشه تا از همون ابتدا داده جمع کنه.</div>
+</section>
+
+<section>
+  <h2 class="section-title">شاخص‌ها و قانون‌های تصمیم‌گیری</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>علامت</th><th>تصمیم</th></tr></thead>
+      <tbody>
+        <tr><td>کلیک زیاد ولی بازدید سایت کم</td><td>مشکل از لینک یا سرعت لود صفحه‌ست — بررسی فنی سایت</td></tr>
+        <tr><td>بازدید سایت زیاد ولی افزودن به سبد کم</td><td>صفحه‌ی محصول یا قیمت رو بررسی کن</td></tr>
+        <tr><td>هزینه‌ی نمایش پایین ولی کلیک خیلی کم</td><td>کیفیت ترافیک ضعیفه — رسانه یا هدف‌گیری رو عوض کن</td></tr>
+        <tr><td>یکی از اپ‌های اختصاصی (سروش، وینزی، بادصبا) خیلی بهتر از بقیه</td><td>سهم اون اپ رو از روز ۵ به بعد بیشتر کن</td></tr>
+        <tr><td>درون‌اپ اختصاصی: دیده‌شدن زیاد ولی کلیک کم</td><td>کریتیو رو عوض کن یا اون اپ رو کنار بذار</td></tr>
+        <tr><td>درون‌اپ هدفمند: یه گروه سنی یا شهر بهتر جواب داده</td><td>بودجه رو به همون گروه منتقل کن</td></tr>
+        <tr><td>ریتارگتینگ نرخ تبدیل بالایی داره</td><td>بودجه‌ی ریتارگتینگ رو از رسانه‌ی ضعیف‌تر افزایش بده</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div>
+<footer>Mio Gold — اکشن پلن جذب کاربر · بودجه‌ی کل ۱۱۰,۰۰۰,۰۰۰ تومان (قابل تنظیم بین ۱۰۰ تا ۱۲۰ میلیون با همین نسبت‌ها) · مدت ۱۸ روز (قابل تنظیم بین ۱۵ تا ۲۰ روز)</footer>
+</body>
+</html>
